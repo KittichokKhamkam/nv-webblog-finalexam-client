@@ -1,19 +1,19 @@
 <template>
   <div>
-    <h1>Create Users</h1>
-    <form v-on:submit.prevent="createUser">
-      <p>name: <input type="text" v-model="user.name" /></p>
-      <p>lastname: <input type="text" v-model="user.lastname" /></p>
-      <p>email: <input type="text" v-model="user.email" /></p>
-      <p>password: <input type="text" v-model="user.password" /></p>
+    <h1>Create speaker</h1>
+    <form v-on:submit.prevent="createspeaker">
+      <p>model: <input type="text" v-model="speaker.model" /></p>
+      <p>brand: <input type="text" v-model="speaker.brand" /></p>
+      <p>watt: <input type="text" v-model="speaker.watt" /></p>
+      <p>power_input: <input type="text" v-model="speaker.power_input" /></p>
       <p><button type="submit">create user</button></p>
     </form>
     <hr />
     <div>
-      <p>name: {{ user.name }}</p>
-      <p>lastname: {{ user.lastname }}</p>
-      <p>email: {{ user.email }}</p>
-      <p>password: {{ user.password }}</p>
+      <p>model: {{ speaker.model }}</p>
+      <p>brand: {{ speaker.brand }}</p>
+      <p>watt: {{ speaker.watt }}</p>
+      <p>power_input: {{ speaker.power_input }}</p>
     </div>
   </div>
 </template>
@@ -23,12 +23,13 @@ import UsersService from "@/services/UserService";
 export default {
   data() {
     return {
-      user: {
-        name: "",
-        lastname: "",
-        email: "",
-        password: "",
-        status: "active"
+       Speaker: {
+        "model": "STOCKWELL II",
+    "brand": "Marshal",
+    "watt": "5.0",
+    "power_input": 220,
+    "status": "not continue",
+    "type": "portable"
       }
     };
   },
@@ -37,7 +38,7 @@ export default {
       try {
         await UsersService.post(this.user);
         this.$router.push({
-          name: "users"
+          name: "Speakers"
         });
       } catch (err) {
         console.log(err);

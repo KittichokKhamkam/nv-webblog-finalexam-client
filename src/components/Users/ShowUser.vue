@@ -1,10 +1,10 @@
 <template>
   <div>
     <h1>Show User</h1>
-    <p>id: {{ user.id }}</p>
-    <p>ชื่อ-นามสกุล: {{ user.name }} - {{ user.lastname }}</p>
-    <p>email: {{ user.email }}</p>
-    <p>password: {{ user.password }}</p>
+    <p>model: {{ speaker.model }}</p>
+      <p>brand: {{ speaker.brand }}</p>
+      <p>watt: {{ speaker.watt }}</p>
+      <p>power_input: {{ speaker.power_input }}</p>
   </div>
 </template>
 <script>
@@ -13,13 +13,13 @@ import UserService from "@/services/UserService";
 export default {
   data() {
     return {
-      user: null
+      speaker: null
     };
   },
   async created() {
-    let userId = this.$route.params.userId;
-    this.user = (await UserService.show(userId)).data
-    console.log(this.userId)
+    let userId = this.$route.params.speakerId;
+    this.user = (await UserService.show(speakerId)).data
+    console.log(this.speakerId)
   }
 };
 </script>

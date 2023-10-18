@@ -10,23 +10,23 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/user/create',
+      path: '/speaker/create',
       name: 'user-create',
       component: UserCreate
     },
     {
-      path: '/user/edit/:userId',
+      path: '/speaker/edit/:speakerId',
       name: 'user-edit',
       component: UserEdit
     },
     {
-      path: '/user/:userId',
+      path: '/speaker/:speakerId',
       name: 'user',
       component: UserShow
     },
     {
-      path: '/users',
-      name: 'users',
+      path: '/speakers',
+      name: 'speakers',
       component: UserIndex
     },
 
